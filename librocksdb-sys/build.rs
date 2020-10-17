@@ -84,7 +84,8 @@ fn build_rocksdb() {
     }
 
     config.include(".");
-    config.define("NDEBUG", Some("1"));
+    config.debug(true);
+    config.opt_level(2);
 
     let mut lib_sources = include_str!("rocksdb_lib_sources.txt")
         .trim()
